@@ -6,9 +6,10 @@ function App() {
 
   const [term, setTerm] = useState<string>('')
   const [options, setOptions] = useState<[]>([])
+  const [city, setCity] = useState<optionType | null>()
   
   const runChange = (value: string) => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${import.meta.env.VITE_OPEN_WEATHER_MAP_API_KEY}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${import.meta.env.VITE_OPEN_WEATHER_MAP_API_KEY}`)
       .then(res=>res.json())
       .then(data=>setOptions(data))
   }
@@ -23,6 +24,8 @@ function App() {
   
   function chooseLocation(info: optionType){
     setTerm(`${info.name}, ${info.state !== undefined ? info.state : ''} ${info.country}`)
+    setOptions([])
+    setCity(info)
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${info.lat}&lon=${info.lon}&appid=${import.meta.env.VITE_OPEN_WEATHER_MAP_API_KEY}`)
       .then(res=>res.json())
       .then(data=>console.log(data))
