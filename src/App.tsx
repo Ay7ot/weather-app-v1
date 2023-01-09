@@ -51,7 +51,7 @@ function App() {
             Search
           </button>
         </div>
-        <div className={`flex flex-col  bg-white p-2 w-[250px] mx-2 rounded-lg mt-[5px] ${term !== '' ? '' : 'hidden'}`}>
+        <div className={`flex flex-col  bg-white p-2 w-[250px] mx-2 rounded-lg mt-[5px] ${options.length !== 0 ? '' : 'hidden'}`}>
           {options.map((option: optionType, index) => (<p className='p-1 text-black hover:bg-red-300 hover:text-white text-[1.1rem]' onClick={()=>chooseLocation(option)} key={`${option.name}, ${index}`}>{option.name}, {option.country}</p>))}
         </div>
       </section>
