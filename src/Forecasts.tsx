@@ -1,5 +1,9 @@
 import React from 'react'
+import { getSunTime, getWindDirection } from './helpers';
+import Sunrise from './Icons/Sunrise';
+import Sunset from './Icons/Sunset';
 import { forecastType } from './index'
+import Tile from './Tile';
 
 type Props = {
   goBack: () => void;
@@ -36,6 +40,24 @@ export default function Forecasts({goBack, forecasts}: Props): JSX.Element {
             </div>
           )
         })}
+     </section>
+     <section className='flex justify-between w-full mt-10'>
+        <div className='bg-white flex flex-col items-center justify-center h-[100px] w-[45%] opacity-40 rounded-lg p-2'>
+          <Sunrise />
+          <p className='font-bold mt-3 text-lg'>{getSunTime(forecasts.city.sunrise)}</p>
+        </div>
+        <div className='bg-white flex flex-col items-center justify-center h-[100px] w-[45%] opacity-40 rounded-lg p-2'>
+          <Sunset />
+          <p className='font-bold mt-3 text-lg'>{getSunTime(forecasts.city.sunset)}</p>
+        </div>
+     </section>
+     <section className='grid grid-cols-2 gap-[10%]'>
+        <Tile 
+          icon='wind'
+          title='Wind'
+          info= {`${getWindDirection(Math.round(today[0].wind.deg))}`}
+          description = {`${today[0].weather[0].description}`}
+        />
      </section>
       <button onClick={goBack} className='bg-red-400 p-3 rounded-lg text-white w-[200px] tracking-wider font-light'>Go Back</button>
     </div>
