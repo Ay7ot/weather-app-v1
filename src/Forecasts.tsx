@@ -16,8 +16,8 @@ export default function Forecasts({goBack, forecasts}: Props): JSX.Element {
   const today = forecasts.list
   
   return (
-    <div className='flex flex-col justify-center items-center pt-5 px-12'> 
-     <div className='sticky top-0'>
+    <div className='flex flex-col justify-center items-center pt-5 px-10'> 
+     <div className=''>
         <h1 className='text-center  text-[2rem] font-bold text-black'>
           {forecasts.city.name}, 
           <span className='font-extralight text-zinc-600'> {forecasts.city.country}</span>
@@ -26,7 +26,7 @@ export default function Forecasts({goBack, forecasts}: Props): JSX.Element {
         </h1>
         <p className='text-sm'>{today[0].weather[0].main} : {today[0].weather[0].description}</p>
      </div>
-     <section className='flex overflow-x-scroll w-full'>
+     <section className='flex overflow-x-scroll w-full py-3'>
         {today.map((item, index)=>{
           return (
             <div key={index} className='w-[50px] flex flex-col items-center flex-shrink-0'>
