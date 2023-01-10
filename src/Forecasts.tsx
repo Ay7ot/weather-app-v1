@@ -30,7 +30,9 @@ export default function Forecasts({goBack, forecasts}: Props): JSX.Element {
           <br />
           <Degree temp={Math.round(today[0].main.temp)} />
         </h1>
-        <p className='text-sm'>{today[0].weather[0].main} : {today[0].weather[0].description}</p>
+        <p className='text-sm text-center'>{today[0].weather[0].main} : {today[0].weather[0].description}</p>
+        <p className='text-sm font-bold text-center flex justify-center'>High: (<Degree temp={Math.ceil(today[0].main.temp_max)}/>)</p>
+        <p className='text-sm font-bold text-center flex justify-center'>low: (<Degree temp={Math.floor(today[0].main.temp_min)}/>)</p>
      </div>
      <section className='flex overflow-x-scroll w-full py-3'>
         {today.map((item, index)=>{
