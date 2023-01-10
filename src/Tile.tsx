@@ -7,7 +7,7 @@ import Visibility from './Icons/Visibility'
 import Wind from './Icons/Wind'
 
 type Props = {
-  icon: 'wind' | 'feels' | 'humidity' | 'visibility' | 'visibility' | 'pop'
+  icon: 'wind' | 'feels' | 'humidity' | 'visibility' | 'visibility' | 'pop' | 'pressure'
   title: string 
   info: string | JSX.Element
   description: string
@@ -25,13 +25,13 @@ const icons = {
 export default function Tile({ icon, title, info, description }: Props): JSX.Element {
  const Icon = icons[icon]  
   return (
-    <article>
-        <div className='flex items-center text-lg'>
+    <article className='bg-white opacity-40 rounded-lg p-2'>
+        <div className='flex items-center text-[1.1rem] font-bold'>
           <Icon />
-          <h4 className='ml-3 font-bold'>{title}</h4>
+          <h4 className='ml-3'>{title}</h4>
         </div>
-        <p>{info}</p>
-        <p>{description}</p>
+        <p className='mt-3 font-semibold text-[1.2rem]'>{info}</p>
+        <p className='mt-3 font-bold text-sm'>{description}</p>
     </article>
   )
 }
