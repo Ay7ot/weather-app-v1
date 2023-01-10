@@ -21,8 +21,8 @@ function App() {
 
 
   return (
-    <main className='font-Inter bg-gradient-to-bl from-blue-700 via-red-400 to-yellow-500 min-h-[screen] flex items-center justify-center'>
-      <section className='flex flex-col px-5 bg-white bg-opacity-20 backdrop-blur-md h-full w-full max-w-[500px] drop-shadow-lg rounded-md  pb-[100px]'>
+    <main className='font-Inter bg-gradient-to-bl from-blue-700 via-red-400 to-yellow-500 min-h-screen flex items-center justify-center'>
+      <section className='flex flex-col px-5 bg-white bg-opacity-20 backdrop-blur-md min-h-screen w-full max-w-[500px] drop-shadow-lg rounded-md pb-[100px]'>
         {forecasts ? (
           <Forecasts goBack={goBack} forecasts={forecasts}/>
         ): (

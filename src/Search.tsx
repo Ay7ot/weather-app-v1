@@ -11,7 +11,7 @@ type Props = {
 export default function Search({term, options, handleOnChange, chooseLocation, onSubmit}: Props): JSX.Element {
 
   return (
-    <div className='mt-[300px]'>
+    <div className='mt-[250px]'>
       <h1 className='text-[2rem] text-zinc-600 text-center'>
           Weather <span className='font-bold text-zinc-800'>Forecast</span>
         </h1>
