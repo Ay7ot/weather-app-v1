@@ -26,12 +26,12 @@ export default function Tile({ icon, title, info, description }: Props): JSX.Ele
  const Icon = icons[icon]  
   return (
     <article className='bg-white opacity-40 rounded-lg p-2'>
-        <div className='flex items-center text-[1.1rem] font-bold'>
+        <div className='flex items-center text-[1.05rem] font-bold'>
           <Icon />
           <h4 className='ml-3'>{title}</h4>
         </div>
         <p className='mt-3 font-semibold text-[1.2rem]'>{info}</p>
-        <p className='mt-3 font-bold text-sm'>{description}</p>
+        <p className='mt-3 font-bold text-[0.8rem]'>{description}</p>
     </article>
   )
 }
