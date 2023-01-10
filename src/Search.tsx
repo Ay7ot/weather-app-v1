@@ -11,7 +11,7 @@ type Props = {
 export default function Search({term, options, handleOnChange, chooseLocation, onSubmit}: Props): JSX.Element {
 
   return (
-    <div className='mt-[250px]'>
+    <section className='flex flex-col px-5 bg-white bg-opacity-20 backdrop-blur-md min-h-screen w-full max-w-[500px] drop-shadow-lg rounded-md pb-[100px] pt-[250px]'>
       <h1 className='text-[2rem] text-zinc-600 text-center'>
           Weather <span className='font-bold text-zinc-800'>Forecast</span>
         </h1>
@@ -32,6 +32,6 @@ export default function Search({term, options, handleOnChange, chooseLocation, o
         <div className={`flex flex-col  bg-white p-2 w-[250px] mx-2 rounded-lg mt-[5px] ${options.length === 0 || term ==='' ? 'hidden' : ''}`}>
           {options.map((option: optionType, index: number) => (<p className='p-1 text-black hover:bg-red-300 hover:text-white text-[1.1rem]' onClick={()=>chooseLocation(option)} key={`${option.name}, ${index}`}>{option.name}, {option.country}</p>))}
         </div>
-    </div>
+    </section>
   )
 }
