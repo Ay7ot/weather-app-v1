@@ -21,7 +21,7 @@ export default function Forecasts({goBack, forecasts}: Props): JSX.Element {
   const today = forecasts.list
   
   return (
-    <section className='flex flex-col px-7 pt-5 bg-white bg-opacity-20 backdrop-blur-md min-h-screen w-full max-w-[500px] drop-shadow-lg rounded-md pb-[100px]'>
+    <section className='flex flex-col px-7 pt-[100px] bg-white bg-opacity-20 backdrop-blur-md min-h-screen w-full max-w-[500px] drop-shadow-lg rounded-md pb-[100px]'>
      <i onClick={goBack} className='text-[2rem] absolute top-7 left-[10%]'><FaArrowLeft /></i>
      <div className=''>
         <h1 className='text-center  text-[2rem] font-bold text-black'>
